@@ -16,7 +16,7 @@ A simple Wii U Menu replacement, still in early development and not ready for a 
 
 ## TODOs
 - Non-touch controls
-- Sound on splashscreen(Fixed hopefully)
+- Sound on splashscreen(Fixed)
 - Folder support
 - Preserve app order after closing/opening launchiine.
 - Display applets like the original Wii U Menu 
