@@ -11,13 +11,12 @@ A simple Wii U Menu replacement, still in early development and not ready for a 
 ## Known Issues
 - Random crashes
 - The Keyboard input is implemented, but result is ignored.
-- nn::spm is not initalized and no quick start menu support. For the it's relying on the [AutobootModule](https://github.com/wiiu-env/AutobootModule) doing this.
-- No sound on splash screen.
+- nn::spm is not initalized and no quick start menu support. For the it's relying on the [AutobootModule](https://github.com/wiiu-env/AutobootModule) for doing this.
 - Probably a lot more
 
 ## TODOs
 - Non-touch controls
-- Sound on splashscreen
+- Sound on splashscreen(Fixed hopefully)
 - Folder support
 - Preserve app order after closing/opening launchiine.
 - Display applets like the original Wii U Menu 
@@ -25,7 +24,7 @@ A simple Wii U Menu replacement, still in early development and not ready for a 
 - Implement update check/no way to update games
 - Properly implement nn::spm and nn:sl (external storage and quick start menu)
 - Fix search
-- Implement all the other stuff the Wii U Menu offers (Account creationg, switching between Accounts, set default account etc.)
+- Implement all the other stuff the Wii U Menu offers (Account creation, switching between Accounts, set default account etc.)
 - Implement ways to launch the original Wii U Menu.
 
 ## Building
