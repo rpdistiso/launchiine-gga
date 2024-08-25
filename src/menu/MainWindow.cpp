@@ -1,21 +1,8 @@
-/****************************************************************************
- * Copyright (C) 2015 Dimok
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
 #include "MainWindow.h"
 #include "Application.h"
 #include "utils/StringTools.h"
 #include "utils/logger.h"
-
+#include "SplashSoundPlayer.h"
 #include "GameSplashScreen.h"
 #include "gui/GuiIconGrid.h"
 #include "gui/GuiTitleBrowser.h"
@@ -27,6 +14,12 @@
 #include <sysapp/args.h>
 #include <sysapp/launch.h>
 #include <sysapp/switch.h>
+
+void MainWindow::playSplashSound() {
+    SplashSoundPlayer soundPlayer;
+    soundPlayer.loadSound("path/to/splash_sound.wav"); // Load the splash sound file
+    soundPlayer.play(); // Play the splash sound
+}
 
 MainWindow::MainWindow(int32_t w, int32_t h)
     : width(w), height(h), gameClickSound(Resources::GetSound("game_click.mp3")), mainSwitchButtonFrame(nullptr), currentTvFrame(nullptr), currentDrcFrame(nullptr) {
