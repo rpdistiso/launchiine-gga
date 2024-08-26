@@ -5,7 +5,7 @@ A simple Wii U Menu replacement, still in early development and not ready for a 
 ## Usage (Replace Wii U Menu via Mocha Payload):
 ([ENVIRONMENT] is a placeholder for the actual environment name.)
 - Place the `men.rpx` on the sd card in the directory `sd:/wiiu/environments/[ENVIRONMENT]/`.
-- Load the [MochaPayload](https://github.com/wiiu-env/MochaPayload) via the [EnvironmentLoader](https://github.com/wiiu-env/EnvironmentLoader) (e.g. [Tiramisu](https://github.com/wiiu-env/Tiramisu) or Aroma)
+- Load the [MochaPayload](https://github.com/wiiu-env/MochaPayload) via the [EnvironmentLoader](https://github.com/wiiu-env/EnvironmentLoader) (e.g. [Tiramisu](https://github.com/wiiu-env/Tiramisu) or [Aroma] (https://github.com/wiiu-env/Aroma))
 - Load the Wii U Menu and launchiine should show up instead.
 
 ## Known Issues
@@ -16,7 +16,7 @@ A simple Wii U Menu replacement, still in early development and not ready for a 
 
 ## TODOs
 - Non-touch controls
-- Sound on splashscreen(Fixed)
+- Sound on splashscreen(Fixed sort of)
 - Folder support
 - Preserve app order after closing/opening launchiine.
 - Display applets like the original Wii U Menu 
