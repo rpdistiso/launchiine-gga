@@ -16,6 +16,7 @@
 #include <sysapp/switch.h>
 #include <sysapp/launch.h>
 #include <thread>
+#include <vpad/input.h>
 
 Application *Application::applicationInstance = nullptr;
 bool Application::exitApplication             = false;
@@ -248,3 +249,9 @@ void Application::executeThread() {
     DEBUG_FUNCTION_LINE("deinitialize memory");
     libgui_memoryRelease();
 }
+
+int32_t VPADRead	(	VPADChan 	0,
+VPADStatus * 	buffers,
+uint32_t 	count,
+VPADReadError * 	outError 
+)
