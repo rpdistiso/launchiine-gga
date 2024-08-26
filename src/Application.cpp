@@ -18,6 +18,10 @@
 #include <thread>
 #include <nn/spm/storage.h>
 
+void nn::spm::Initialize()
+asm("Initialize__Q2_2nn3spmFv");
+int32_t nn::spm::SetExtendedStorage	(StorageIndex * index);
+
 Application *Application::applicationInstance = nullptr;
 bool Application::exitApplication             = false;
 bool Application::quitRequest                 = false;
@@ -248,5 +252,5 @@ void Application::executeThread() {
 
     DEBUG_FUNCTION_LINE("deinitialize memory");
     libgui_memoryRelease();
+
 }
-void nn::spm::Initialize()
