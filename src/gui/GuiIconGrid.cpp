@@ -1,16 +1,3 @@
-/****************************************************************************
- * Copyright (C) 2015 Dimok
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
 #include "Application.h"
 #include "common/common.h"
 #include "gui/GameIcon.h"
@@ -24,7 +11,7 @@
 
 GuiIconGrid::GuiIconGrid(int32_t w, int32_t h, uint64_t GameIndex, bool sortByName): GuiTitleBrowser(w, h, GameIndex),
   sortByName(sortByName),
-  particleBgImage(w, h, 50, 60.0 f, 90.0 f, 0.6 f, 1.0 f), buttonClickSound(Resources::GetSound("button_click.mp3")), gameTitle((char * ) nullptr, 52, glm::vec4(1.0 f)),
+  particleBgImage(w, h, 50, 60.0f, 90.0f, 0.6f, 1.0f), buttonClickSound(Resources::GetSound("button_click.mp3")), gameTitle((char * ) nullptr, 52, glm::vec4(1.0f)),
   touchTrigger(GuiTrigger::CHANNEL_1, GuiTrigger::VPAD_TOUCH),
   wpadTouchTrigger(GuiTrigger::CHANNEL_2 | GuiTrigger::CHANNEL_3 | GuiTrigger::CHANNEL_4 | GuiTrigger::CHANNEL_5, GuiTrigger::BUTTON_A),
   leftTrigger(GuiTrigger::CHANNEL_ALL, GuiTrigger::BUTTON_LEFT | GuiTrigger::STICK_L_LEFT, true),
@@ -114,7 +101,7 @@ GuiIconGrid::GuiIconGrid(int32_t w, int32_t h, uint64_t GameIndex, bool sortByNa
     append( & dragListener);
 
     gameTitle.setPosition(0, -320);
-    gameTitle.setBlurGlowColor(5.0 f, glm::vec4(0.109804, 0.6549, 1.0 f, 1.0 f));
+    gameTitle.setBlurGlowColor(5.0f, glm::vec4(0.109804, 0.6549, 1.0f, 1.0f));
     gameTitle.setMaxWidth(900, GuiText::DOTTED);
     gameTitle.setText("");
     append( & gameTitle);
@@ -521,10 +508,10 @@ void GuiIconGrid::process() {
       if (dragTarget) {
         DEBUG_FUNCTION_LINE("Let's swap");
 
-        std::vector < std::pair < uint64_t, GameInfoContainer * >> vec;
+        std::vector <std::pair <uint64_t, GameInfoContainer * >> vec;
         containerMutex.lock();
         // copy key-value pairs from the map to the vector
-        std::copy(gameInfoContainers.begin(), gameInfoContainers.end(), std::back_inserter < std::vector < std::pair < uint64_t, GameInfoContainer * >>> (vec));
+        std::copy(gameInfoContainers.begin(), gameInfoContainers.end(), std::back_inserter <std::vector <std::pair <uint64_t, GameInfoContainer * >>> (vec));
         containerMutex.unlock();
         uint64_t targetTitleId = 0;
         for (auto
@@ -612,7 +599,7 @@ void GuiIconGrid::updateButtonPositions() {
   containerMutex.lock();
 
   // copy key-value pairs from the map to the vector
-  std::copy(gameInfoContainers.begin(), gameInfoContainers.end(), std::back_inserter < std::vector < std::pair < uint64_t, GameInfoContainer * >>> (vec));
+  std::copy(gameInfoContainers.begin(), gameInfoContainers.end(), std::back_inserter <std::vector <std::pair <uint64_t, GameInfoContainer * >>> (vec));
 
   containerMutex.unlock();
 
@@ -706,8 +693,8 @@ void GuiIconGrid::updateButtonPositions() {
   for (uint32_t i = startPage * (MAX_COLS * MAX_ROWS); i < (endPage + 1) * (MAX_COLS * MAX_ROWS); i++) {
     listOff = i / (MAX_COLS * MAX_ROWS);
     GuiButton * element = nullptr;
-    float posX = currentLeftPosition + listOff * width + (col * (noIcon.getWidth() + noIcon.getWidth() * 0.5 f) - (MAX_COLS * 0.5 f - 0.5 f) * (noIcon.getWidth() + noIcon.getWidth() * 0.5 f));
-    float posY = -row * (noIcon.getHeight() + noIcon.getHeight() * 0.5 f) + (MAX_ROWS * 0.5 f - 0.5 f) * (noIcon.getHeight() + noIcon.getHeight() * 0.5 f) + 30.0 f;
+    float posX = currentLeftPosition + listOff * width + (col * (noIcon.getWidth() + noIcon.getWidth() * 0.5f) - (MAX_COLS * 0.5f - 0.5f) * (noIcon.getWidth() + noIcon.getWidth() * 0.5f));
+    float posY = -row * (noIcon.getHeight() + noIcon.getHeight() * 0.5f) + (MAX_ROWS * 0.5f - 0.5f) * (noIcon.getHeight() + noIcon.getHeight() * 0.5f) + 30.0f;
 
     if (i < position.size()) {
       uint64_t titleID = position.at(i);
