@@ -8,9 +8,9 @@
 #include <gui/video/shaders/ShaderFractalColor.h>
 
 static
-const float cfIconMirrorScale = 1.15 f;
+const float cfIconMirrorScale = 1.15f;
 static
-const float cfIconMirrorAlpha = 0.45 f;
+const float cfIconMirrorAlpha = 0.45f;
 
 GameIcon::GameIcon(GuiImageData * preloadImage): GuiImage(preloadImage) {
   bSelected = false;
@@ -18,21 +18,20 @@ GameIcon::GameIcon(GuiImageData * preloadImage): GuiImage(preloadImage) {
   bRenderReflection = false;
   bIconLast = false;
   strokeFractalEnable = 1;
-  strokeBlurBorder = 0.0 f;
-  distanceFadeout = 0.0 f;
-  rotationX = 0.0 f;
-  reflectionAlpha = 0.4 f;
-  strokeWidth = 2.35 f;
-  colorIntensity = glm::vec4(1.0 f);
-  colorIntensityMirror = colorIntensity;
-  alphaFadeOutNorm = glm::vec4(0.0 f);
-  alphaFadeOutRefl = glm::vec4(-1.0 f, 0.0 f, 0.9 f, 1.0 f);
-  selectionBlurOuterColorIntensity = glm::vec4(0.09411764 f * 1.15 f, 0.56862745 f * 1.15 f, 0.96862745098 f * 1.15 f, 1.0 f);
-  selectionBlurOuterSize = 1.65 f;
-  selectionBlurOuterBorderSize = 0.5 f;
-  selectionBlurInnerColorIntensity = glm::vec4(0.46666667 f, 0.90588235 f, 1.0 f, 1.0 f);
-  selectionBlurInnerSize = 1.45 f;
-  selectionBlurInnerBorderSize = 0.95 f;
+  strokeBlurBorder = 0.0f;
+  distanceFadeout = 0.0f;
+  rotationX = 0.0f;
+  reflectionAlpha = 0.4f;
+  strokeWidth = 2.35f;
+  colorIntensity = glm::vec4(1.0f);
+  alphaFadeOutNorm = glm::vec4(0.0f);
+  alphaFadeOutRefl = glm::vec4(-1.0f, 0.0f, 0.9f, 1.0f);
+  selectionBlurOuterColorIntensity = glm::vec4(0.09411764f * 1.15f, 0.56862745f * 1.15f, 0.96862745098f * 1.15f, 1.0f);
+  selectionBlurOuterSize = 1.65f;
+  selectionBlurOuterBorderSize = 0.5f;
+  selectionBlurInnerColorIntensity = glm::vec4(0.46666667f, 0.90588235f, 1.0f, 1.0f);
+  selectionBlurInnerSize = 1.45f;
+  selectionBlurInnerBorderSize = 0.95f;
 
   vtxCount = sizeof(cfGameIconPosVtxs) / (Shader3D::cuVertexAttrSize);
 
