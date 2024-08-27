@@ -76,7 +76,7 @@ void SplashSoundPlayer::Play() {
   transitionAudioBuffer.unk1 = 1;
   transitionAudioBuffer.unk2 = 0;
 
-  transitionAudioBuffer.tv.unk1 = 0.99987207655 f;
+  transitionAudioBuffer.tv.unk1 = 0.99987207655f;
   transitionAudioBuffer.tv.unk2 = 600;
 
   transitionAudioBuffer.drc.unk1 = transitionAudioBuffer.tv.unk1;
