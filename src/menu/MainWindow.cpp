@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "utils/StringTools.h"
 #include "utils/logger.h"
-#include "SplashSoundPlayer.h"
+#include <utils/SplashSoundPlayer.h>
 #include "GameSplashScreen.h"
 #include "gui/GuiIconGrid.h"
 #include "gui/GuiTitleBrowser.h"
@@ -17,7 +17,7 @@
 
 void MainWindow::playSplashSound() {
   SplashSoundPlayer soundPlayer;
-  soundPlayer.loadSound("path/to/splash_sound.wav"); // Load the splash sound file
+  soundPlayer.loadSound("data/sounds/bootSound.mp3"); // Load the splash sound file
   soundPlayer.play(); // Play the splash sound
 }
 
