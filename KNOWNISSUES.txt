@@ -1,0 +1,3 @@
+These issues are my main concerns:
+  - Random crashes related to GX2
+  - No ability to access applets
