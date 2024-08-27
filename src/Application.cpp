@@ -1,39 +1,21 @@
 #include "Application.h"
-
 #include "common/common.h"
-
 #include "resources/Resources.h"
-
 #include "utils/AsyncExecutor.h"
-
 #include "utils/logger.h"
-
 #include <utils/SplashSoundPlayer.h>
-
 #include <coreinit/core.h>
-
 #include <coreinit/foreground.h>
-
 #include <coreinit/title.h>
-
 #include <gui/FreeTypeGX.h>
-
 #include <gui/VPadController.h>
-
 #include <gui/WPadController.h>
-
 #include <gui/memory.h>
-
 #include <gui/sounds/SoundHandler.hpp>
-
 #include <proc_ui/procui.h>
-
 #include <sysapp/switch.h>
-
 #include <sysapp/launch.h>
-
 #include <thread>
-
 #include <nn/spm/storage.h>
 
 void nn::spm::Initialize();
@@ -117,7 +99,7 @@ void Application::fadeOut() {
         if (i > 255)
             i = 255;
 
-        fadeOut.setAlpha(i / 255.0 f);
+        fadeOut.setAlpha(i / 255.0f);
 
         //! start rendering DRC
         video -> prepareDrcRendering();
