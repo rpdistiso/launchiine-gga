@@ -3,15 +3,15 @@
 A simple Wii U Menu replacement, still in early development and not ready for a day to day usage
 
 ## Usage (Replace Wii U Menu via Mocha Payload):
-([ENVIRONMENT] is a placeholder for the actual environment name.)
-- Place the `men.rpx` on the sd card in the directory `sd:/wiiu/environments/[ENVIRONMENT]/`.
+([ENVIRONMENT] is a placeholder for the actual environment name)
+- Place the `men.rpx` on the sd card in the directory `sd:/wiiu/environments/[ENVIRONMENT]/`
 - Load the [MochaPayload](https://github.com/wiiu-env/MochaPayload) via the [EnvironmentLoader](https://github.com/wiiu-env/EnvironmentLoader) (e.g. [Tiramisu](https://github.com/wiiu-env/Tiramisu) or [Aroma](https://github.com/wiiu-env/Aroma))
-- Load the Wii U Menu and launchiine should show up instead.
+- Load the Wii U Menu and launchiine should show up instead
 
 ## Known Issues
 - Random crashes
-- The Keyboard input is implemented, but result is ignored.
-- nn::spm initalized and no quick start menu support. It's relying on the [AutobootModule](https://github.com/wiiu-env/AutobootModule)
+- The Keyboard input is implemented, but result is ignored
+- nn::spm is initalized but no quick start menu support. It's relying on the [AutobootModule](https://github.com/wiiu-env/AutobootModule)
 - Probably a lot more
 
 ## TODOs
