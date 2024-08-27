@@ -69,7 +69,7 @@ GameIcon::GameIcon(GuiImageData * preloadImage): GuiImage(preloadImage) {
   if (strokeTexCoords) {
     for (size_t i = 0, n = 0; i < cuGameIconStrokeVtxCount; n += 2, i += 3) {
       strokeTexCoords[n] = (1.0f + strokePosVtxs[i]) * 0.5f;
-      strokeTexCoords[n + 1] = 1.0f - (1.0f + strokePosVtxs[i + 1]) * 0.5 f;
+      strokeTexCoords[n + 1] = 1.0f - (1.0f + strokePosVtxs[i + 1]) * 0.5f;
     }
     GX2Invalidate(GX2_INVALIDATE_MODE_CPU_ATTRIBUTE_BUFFER, strokeTexCoords, cuGameIconStrokeVtxCount * Shader::cuTexCoordAttrSize);
   }
