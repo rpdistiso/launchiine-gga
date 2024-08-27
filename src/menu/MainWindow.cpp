@@ -15,7 +15,7 @@
 #include <sysapp/launch.h>
 #include <sysapp/switch.h>
 
-void MainWindow::playSplashSound() {
+void SplashSoundPlayer::playSplashSound() {
   SplashSoundPlayer soundPlayer;
   soundPlayer.loadSound("data/sounds/bootSound.mp3"); // Load the splash sound file
   soundPlayer.play(); // Play the splash sound
@@ -26,7 +26,7 @@ MainWindow::MainWindow(int32_t w, int32_t h): width(w), height(h), gameClickSoun
     std::string filename = StringTools::strfmt("player%i_point.png", i + 1);
     pointerImgData[i] = Resources::GetImageData(filename.c_str());
     pointerImg[i] = new GuiImage(pointerImgData[i]);
-    pointerImg[i] -> setScale(1.5 f);
+    pointerImg[i] -> setScale(1.5f);
     pointerValid[i] = false;
   }
   SetupMainView();
@@ -191,9 +191,9 @@ void MainWindow::drawDrc(CVideo * video) {
 
   for (int32_t i = 0; i < 4; i++) {
     if (pointerValid[i]) {
-      pointerImg[i] -> setAlpha(0.5 f);
+      pointerImg[i] -> setAlpha(0.5f);
       pointerImg[i] -> draw(video);
-      pointerImg[i] -> setAlpha(1.0 f);
+      pointerImg[i] -> setAlpha(1.0f);
     }
   }
 
@@ -402,51 +402,51 @@ void MainWindow::OnGameLaunchSplashScreenFinished(GuiElement * element, gameInfo
 void MainWindow::OnGameLaunch(uint64_t titleId) {
   DEBUG_FUNCTION_LINE("Launch GAME!!");
 
-  if (titleId == 0x0005001010040000 L ||
-    titleId == 0x0005001010040100 L ||
-    titleId == 0x0005001010040200 L) {
+  if (titleId == 0x0005001010040000L ||
+    titleId == 0x0005001010040100L ||
+    titleId == 0x0005001010040200L) {
     DEBUG_FUNCTION_LINE("Skip launching the Wii U Menu");
     return;
   }
 
-  if (titleId == 0x000500301001220A L ||
-    titleId == 0x000500301001210A L ||
-    titleId == 0x000500301001200A L) {
+  if (titleId == 0x000500301001220AL ||
+    titleId == 0x000500301001210AL ||
+    titleId == 0x000500301001200AL) {
     DEBUG_FUNCTION_LINE("Launching the browser");
     SYSSwitchToBrowser(nullptr);
     return;
   }
-  if (titleId == 0x000500301001400A L ||
-    titleId == 0x000500301001410A L ||
-    titleId == 0x000500301001420A L) {
+  if (titleId == 0x000500301001400AL ||
+    titleId == 0x000500301001410AL ||
+    titleId == 0x000500301001420AL) {
     DEBUG_FUNCTION_LINE("Launching the Eshop");
     SYSSwitchToEShop(nullptr);
     return;
   }
-  if (titleId == 0x000500301001800A L ||
-    titleId == 0x000500301001810A L ||
-    titleId == 0x000500301001820A L) {
+  if (titleId == 0x000500301001800AL ||
+    titleId == 0x000500301001810AL ||
+    titleId == 0x000500301001820AL) {
     DEBUG_FUNCTION_LINE("Launching the Download Management");
     _SYSSwitchTo(SYSAPP_PFID_DOWNLOAD_MANAGEMENT);
     return;
   }
-  if (titleId == 0x000500301001600A L ||
-    titleId == 0x000500301001610A L ||
-    titleId == 0x000500301001620A L) {
+  if (titleId == 0x000500301001600AL ||
+    titleId == 0x000500301001610AL ||
+    titleId == 0x000500301001620AL) {
     DEBUG_FUNCTION_LINE("Launching Miiverse");
     _SYSSwitchTo(SYSAPP_PFID_MIIVERSE);
     return;
   }
-  if (titleId == 0x000500301001500A L ||
-    titleId == 0x000500301001510A L ||
-    titleId == 0x000500301001520A L) {
+  if (titleId == 0x000500301001500AL ||
+    titleId == 0x000500301001510AL ||
+    titleId == 0x000500301001520AL) {
     DEBUG_FUNCTION_LINE("Launching Friendlist");
     _SYSSwitchTo(SYSAPP_PFID_FRIENDLIST);
     return;
   }
-  if (titleId == 0x000500301001300A L ||
-    titleId == 0x000500301001310A L ||
-    titleId == 0x000500301001320A L) {
+  if (titleId == 0x000500301001300AL ||
+    titleId == 0x000500301001310AL ||
+    titleId == 0x000500301001320AL) {
     DEBUG_FUNCTION_LINE("Launching TVii");
     _SYSSwitchTo(SYSAPP_PFID_TVII);
     return;
