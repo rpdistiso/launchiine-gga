@@ -21,6 +21,8 @@
 void nn::spm::Initialize()
 asm("Initialize__Q2_2nn3spmFv");
 int32_t nn::spm::SetExtendedStorage	(StorageIndex * index);
+void nn::spm::Finalize()
+asm("Finalize__Q2_2nn3spmFv");
 
 Application *Application::applicationInstance = nullptr;
 bool Application::exitApplication             = false;
