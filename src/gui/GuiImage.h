@@ -56,7 +56,7 @@ public:
     }
 
     //!Constantly called to draw the image
-    void using draw(CVideo *pVideo);
+    void draw(CVideo *pVideo) override;
 
     //!Gets the image data
     //!\return pointer to image data
