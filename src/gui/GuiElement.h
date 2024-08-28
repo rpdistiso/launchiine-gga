@@ -47,6 +47,11 @@ class GuiController;
 class CVideo;
 
 //!Primary GUI class. Most other classes inherit from this class.
+class GuiImageData : public GuiElement {
+public:
+    using GuiElement::getWidth;
+    using GuiElement::getHeight;
+}
 class GuiElement {
 public:
 
