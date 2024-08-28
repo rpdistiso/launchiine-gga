@@ -9,6 +9,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <wchar.h>
+#include <gui/GuiImageData.h>
 #include <gui/gx2_ext.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -47,11 +48,6 @@ class GuiController;
 class CVideo;
 
 //!Primary GUI class. Most other classes inherit from this class.
-class GuiImageData : public GuiElement {
-public:
-    using GuiElement::getWidth;
-    using GuiElement::getHeight;
-}
 class GuiElement {
 public:
 
