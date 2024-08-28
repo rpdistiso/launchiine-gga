@@ -168,20 +168,20 @@ public:
 
     //!Gets the current width of the element. Does not currently consider the scale
     //!\return width
-    virtual float using getWidth() {
+    virtual float getWidth() override {
         return width;
     };
 
     //!Gets the height of the element. Does not currently consider the scale
     //!\return height
-    virtual float using getHeight() {
+    virtual float getHeight() override {
         return height;
     }
 
     //!Sets the size (width/height) of the element
     //!\param w Width of element
     //!\param h Height of element
-    virtual void using setSize(float w, float h) {
+    virtual void setSize(float w, float h) override {
         width  = w;
         height = h;
     }
