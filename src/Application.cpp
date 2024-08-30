@@ -19,6 +19,7 @@
 #include <nsysuhs/uhs.h>
 #include <thread>
 #include <nn/spm.h>
+#include <nn/acp/save.h>
 
 void initExternalStorage() {
     if (OSGetTitleID() == _SYSGetSystemApplicationTitleId(SYSTEM_APP_ID_MII_MAKER)) {
