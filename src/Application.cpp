@@ -7,6 +7,7 @@
 #include <coreinit/core.h>
 #include <coreinit/foreground.h>
 #include <coreinit/title.h>
+#include <coreinit/thread.h>
 #include <gui/FreeTypeGX.h>
 #include <gui/VPadController.h>
 #include <gui/WPadController.h>
@@ -18,8 +19,82 @@
 #include <sysapp/title.h>
 #include <nsysuhs/uhs.h>
 #include <thread>
+#include <malloc.h>
 #include <nn/spm.h>
 #include <nn/acp/save.h>
+
+static void InitEmptyExternalStorage() {
+    DEBUG_FUNCTION_LINE("Fallback to empty ExtendedStorage");
+    nn::spm::VolumeId empty{};
+    nn::spm::SetDefaultExtendedStorageVolumeId(empty);
+
+    nn::spm::StorageIndex storageIndex = 0;
+    nn::spm::SetExtendedStorage(&storageIndex);
+}
+
+static int numberUSBStorageDevicesConnected() {
+    DEBUG_FUNCTION_LINE("Check if USB Storage is connected");
+    auto *handle = (UhsHandle *) memalign(0x40, sizeof(UhsHandle));
+    if (!handle) {
+        return -1;
+    }
+    memset(handle, 0, sizeof(UhsHandle));
+    auto *config = (UhsConfig *) memalign(0x40, sizeof(UhsConfig));
+    if (!config) {
+        free(handle);
+        return -2;
+    }
+    memset(config, 0, sizeof(UhsConfig));
+
+    config->controller_num = 0;
+    uint32_t size          = 5120;
+    void *buffer           = memalign(0x40, size);
+    if (!buffer) {
+        free(handle);
+        free(config);
+        return -3;
+    }
+    memset(buffer, 0, size);
+
+    config->buffer      = buffer;
+    config->buffer_size = size;
+
+    if (UhsClientOpen(handle, config) != UHS_STATUS_OK) {
+        DEBUG_FUNCTION_LINE("UhsClient failed");
+        free(handle);
+        free(config);
+        free(buffer);
+        return -4;
+    }
+
+    UhsInterfaceProfile profiles[10];
+    UhsInterfaceFilter filter = {
+            .match_params = MATCH_ANY};
+
+    UHSStatus result;
+    if ((result = UhsQueryInterfaces(handle, &filter, profiles, 10)) <= UHS_STATUS_OK) {
+        DEBUG_FUNCTION_LINE("UhsQueryInterfaces failed");
+        UhsClientClose(handle);
+        free(handle);
+        free(config);
+        free(buffer);
+        return -5;
+    }
+
+    auto found = 0;
+    for (int i = 0; i < (int) result; i++) {
+        if (profiles[i].if_desc.bInterfaceClass == USBCLASS_STORAGE) {
+            DEBUG_FUNCTION_LINE("Found USBCLASS_STORAGE");
+            found++;
+        }
+    }
+
+    UhsClientClose(handle);
+    free(handle);
+    free(config);
+    free(buffer);
+    return found;
+}
 
 void initExternalStorage() {
     if (OSGetTitleID() == _SYSGetSystemApplicationTitleId(SYSTEM_APP_ID_MII_MAKER)) {
