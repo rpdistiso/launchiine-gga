@@ -1,6 +1,8 @@
 #ifndef GUI_IMAGE_H_
 #define GUI_IMAGE_H_
 
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/mat4x4.hpp>
 #include <gui/GuiElement.h>
 #include <gui/GuiImageData.h>
 #include <gui/gx2_ext.h>
@@ -44,6 +46,7 @@ public:
 
     //!Constantly called to draw the image
     void draw(CVideo *pVideo) override;
+    virtual void draw(CVideo *pVideo, const glm::mat4 &modelView);
 
     //!Gets the image data
     //!\return pointer to image data
@@ -70,6 +73,7 @@ public:
     void setImageColor(const GX2Color &c, int32_t idx = -1);
 
     //!Change ImageColor
+    virtual void setSize(float w, float h) override;
     void setSize(int32_t w, int32_t h);
 
     void setPrimitiveVertex(int32_t prim, const float *pos, const float *tex, uint32_t count);

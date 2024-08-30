@@ -13,6 +13,7 @@
 #include <gui/WPadController.h>
 #include <gui/memory.h>
 #include <gui/sounds/SoundHandler.hpp>
+#include <glm/mat4x4.hpp>
 #include <proc_ui/procui.h>
 #include <sysapp/switch.h>
 #include <sysapp/launch.h>
@@ -217,12 +218,14 @@ void Application::quit(int32_t code) {
 }
 
 void Application::fadeOut() {
-    GuiImage fadeOut(video -> getTvWidth(), video -> getTvHeight(), (GX2Color) {
+    GuiImage fadeOut(video->getTvWidth(), video->getTvHeight(), (GX2Color) {
         0,
         0,
         0,
         255
     });
+
+glm::mat4 identityMatrix(1.0f);
 
     for (int32_t i = 0; i < 255; i += 10) {
         if (i > 255)
@@ -235,7 +238,7 @@ void Application::fadeOut() {
         mainWindow -> drawDrc(video);
 
         GX2SetDepthOnlyControl(GX2_DISABLE, GX2_DISABLE, GX2_COMPARE_FUNC_ALWAYS);
-        fadeOut.draw(video);
+        fadeOut.draw(video, identityMatrix);
         GX2SetDepthOnlyControl(GX2_ENABLE, GX2_ENABLE, GX2_COMPARE_FUNC_LEQUAL);
 
         video -> drcDrawDone();
@@ -246,7 +249,7 @@ void Application::fadeOut() {
         mainWindow -> drawTv(video);
 
         GX2SetDepthOnlyControl(GX2_DISABLE, GX2_DISABLE, GX2_COMPARE_FUNC_ALWAYS);
-        fadeOut.draw(video);
+        fadeOut.draw(video, identityMatrix);
         GX2SetDepthOnlyControl(GX2_ENABLE, GX2_ENABLE, GX2_COMPARE_FUNC_LEQUAL);
 
         video -> tvDrawDone();

@@ -1,11 +1,13 @@
-#ifndef GUI_IMAGEDATA_H_
-#define GUI_IMAGEDATA_H_
+#ifndef GUI_IMAGE_DATA_H
+#define GUI_IMAGE_DATA_H
 
 #include <malloc.h>
 #include <gd.h>
 #include <gui/GuiElement.h>
 #include <gui/gx2_ext.h>
 #include <gx2/texture.h>
+
+class GuiElement;
 
 class GuiImageData : public GuiElement {
 public:
