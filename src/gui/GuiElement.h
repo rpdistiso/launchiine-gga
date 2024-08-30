@@ -1,5 +1,5 @@
-#ifndef GUI_ELEMENT_H_
-#define GUI_ELEMENT_H_
+#ifndef GUIELEMENT_H
+#define GUIELEMENT_H
 #include <string>
 #include <vector>
 #include <malloc.h>
@@ -122,7 +122,7 @@ public:
             pCenterX += pWidth * 0.5f * pScale - width * 0.5f * getScaleX();
         }
         return pCenterX;
-    }
+    };
 
     virtual float getCenterY(void) {
         float pCenterY = 0.0f;
