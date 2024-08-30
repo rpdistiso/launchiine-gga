@@ -76,7 +76,7 @@ void initExternalStorage() {
     }
 
     nn::spm::Finalize();
-
+}
 Application * Application::applicationInstance = nullptr;
 bool Application::exitApplication = false;
 bool Application::quitRequest = false;
