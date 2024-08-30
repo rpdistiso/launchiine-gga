@@ -16,11 +16,64 @@
 #include <sysapp/switch.h>
 #include <sysapp/launch.h>
 #include <thread>
-#include <nn/spm/storage.h>
+#include <nn/spm.h>
 
-void nn::spm::Initialize();
-int32_t nn::spm::SetExtendedStorage(StorageIndex * index);
-void nn::spm::Finalize();
+void initExternalStorage() {
+    if (OSGetTitleID() == _SYSGetSystemApplicationTitleId(SYSTEM_APP_ID_MII_MAKER)) {
+        // nn::spm functions always call OSFatal when they fail, so we make sure have permission to use
+        // the lib before actually using it.
+        return;
+    }
+    int numConnectedStorage;
+    int maxTries = 1200; // Wait up to 20 seconds, like the Wii U Menu
+    if ((numConnectedStorage = numberUSBStorageDevicesConnected()) <= 0) {
+        maxTries = 1; // Only try once if no USBStorageDrive is connected
+    } else {
+        DEBUG_FUNCTION_LINE("Connected StorageDevices = %d", numConnectedStorage);
+    }
+
+    nn::spm::Initialize();
+
+    nn::spm::StorageListItem items[0x20];
+    int tries  = 0;
+    bool found = false;
+
+    while (tries < maxTries) {
+        int32_t numItems = nn::spm::GetStorageList(items, 0x20);
+
+        DEBUG_FUNCTION_LINE("Number of items: %d", numItems);
+
+        for (int32_t i = 0; i < numItems; i++) {
+            if (items[i].type == nn::spm::STORAGE_TYPE_WFS) {
+                nn::spm::StorageInfo info{};
+                if (nn::spm::GetStorageInfo(&info, &items[i].index) == 0) {
+                    DEBUG_FUNCTION_LINE("Using %s for extended storage", info.path);
+
+                    nn::spm::SetExtendedStorage(&items[i].index);
+                    ACPMountExternalStorage();
+
+                    nn::spm::SetDefaultExtendedStorageVolumeId(info.volumeId);
+
+                    found = true;
+                    break;
+                }
+            }
+        }
+        if (found || (numConnectedStorage == numItems)) {
+            DEBUG_FUNCTION_LINE("Found all expected items, breaking.");
+            break;
+        }
+        OSSleepTicks(OSMillisecondsToTicks(16));
+        tries++;
+    }
+    if (!found) {
+        if (numConnectedStorage > 0) {
+            DEBUG_FUNCTION_LINE("USB Storage is connected but either it doesn't have a WFS partition or we ran into a timeout.");
+        }
+        InitEmptyExternalStorage();
+    }
+
+    nn::spm::Finalize();
 
 Application * Application::applicationInstance = nullptr;
 bool Application::exitApplication = false;
