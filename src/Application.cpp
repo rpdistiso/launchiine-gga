@@ -15,6 +15,8 @@
 #include <proc_ui/procui.h>
 #include <sysapp/switch.h>
 #include <sysapp/launch.h>
+#include <sysapp/title.h>
+#include <nsysuhs/uhs.h>
 #include <thread>
 #include <nn/spm.h>
 
