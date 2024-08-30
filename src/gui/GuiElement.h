@@ -1,5 +1,5 @@
-#ifndef GUIELEMENT_H
-#define GUIELEMENT_H
+#ifndef GUI_ELEMENT_H
+#define GUI_ELEMENT_H
 #include <string>
 #include <vector>
 #include <malloc.h>
@@ -9,9 +9,10 @@
 #include <string.h>
 #include <unistd.h>
 #include <wchar.h>
-#include <gui/GuiImageData.h>
+#include "GuiImageData.h"
 #include <gui/gx2_ext.h>
 #include <glm/glm.hpp>
+#include <glm/mat4x4.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <gui/sigslot.h>
 

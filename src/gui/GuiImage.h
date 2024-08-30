@@ -4,7 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/mat4x4.hpp>
 #include <gui/GuiElement.h>
-#include <gui/GuiImageData.h>
+#include "GuiImageData.h"
 #include <gui/gx2_ext.h>
 #include <gui/video/shaders/Shader.h>
 
@@ -45,7 +45,7 @@ public:
     }
 
     //!Constantly called to draw the image
-    void draw(CVideo *pVideo) override;
+    virtual void draw(CVideo *pVideo) override;
     virtual void draw(CVideo *pVideo, const glm::mat4 &modelView);
 
     //!Gets the image data

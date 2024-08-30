@@ -7,9 +7,7 @@
 #include <gui/gx2_ext.h>
 #include <gx2/texture.h>
 
-class GuiElement;
-
-class GuiImageData : public GuiElement {
+class GuiImageData {
 public:
     //!Constructor
     GuiImageData();

@@ -4,6 +4,7 @@
 #include <coreinit/cache.h>
 #include <future>
 #include <gui/GuiElement.h>
+#include <gui/GuiImageData.h>
 #include <queue>
 #include <thread>
 #include <vector>
@@ -17,6 +18,13 @@ public:
         instance->pushForDeleteInternal(element);
     }
 
+static void pushForDelete(GuiImageData *imageData) {
+if (!instance) {
+    instance = new AsyncExecutor();
+}
+instance->pushForDeleteInternal(imageData);
+delete imageData;
+}
     static void execute(std::function<void()> func) {
         if (!instance) {
             instance = new AsyncExecutor();
