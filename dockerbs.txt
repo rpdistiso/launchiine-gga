@@ -1,0 +1,123 @@
+root ➜ /workspaces/launchiine (master) $ docker run -it --rm -v ${PWD}:/project launchiine-builder make -j2
+iconEmpty.png
+layoutSwitchButton.png
+leftArrow.png
+noGameIcon.png
+rightArrow.png
+settingsButton.png
+bgMusic.ogg
+bootSound.mp3
+button_click.mp3
+settings_click_2.mp3
+font.ttf
+Application.cpp
+entry.cpp
+In file included from /project/src/gui/GuiElement.h:12,
+                 from /project/src/gui/GuiImage.h:4,
+                 from /opt/devkitpro/wut/usr/include/gui/GuiImageAsync.h:22,
+                 from /project/src/gui/GameBgImage.h:4,
+                 from /project/src/gui/Gui.h:18,
+                 from /project/src/menu/MainDrcButtonsFrame.h:17,
+                 from /project/src/menu/MainWindow.h:18,
+                 from /project/src/Application.h:17,
+                 from /project/src/entry.cpp:1:
+/opt/devkitpro/wut/usr/include/gui/GuiImageData.h:25:40: error: expected class-name before '{' token
+   25 | class GuiImageData : public GuiElement {
+      |                                        ^
+In file included from /project/src/gui/GuiElement.h:12,
+                 from /project/src/gui/GuiImage.h:4,
+                 from /opt/devkitpro/wut/usr/include/gui/GuiImageAsync.h:22,
+                 from /project/src/gui/GameBgImage.h:4,
+                 from /project/src/gui/Gui.h:18,
+                 from /project/src/menu/MainDrcButtonsFrame.h:17,
+                 from /project/src/menu/MainWindow.h:18,
+                 from /project/src/Application.h:17,
+                 from /project/src/Application.cpp:1:
+/opt/devkitpro/wut/usr/include/gui/GuiImageData.h:25:40: error: expected class-name before '{' token
+   25 | class GuiImageData : public GuiElement {
+      |                                        ^
+/project/src/gui/GuiImage.h:46:10: warning: 'virtual void GuiImage::draw(CVideo*)' was hidden [-Woverloaded-virtual=]
+   46 |     void draw(CVideo *pVideo);
+      |          ^~~~
+In file included from /project/src/gui/Gui.h:19:
+/opt/devkitpro/wut/usr/include/gui/GridBackground.h:24:10: note:   by 'void GridBackground::draw(CVideo*, const glm::mat4&)'
+   24 |     void draw(CVideo *pVideo, const glm::mat4 &modelView);
+      |          ^~~~
+/project/src/gui/GuiImage.h:46:10: warning: 'virtual void GuiImage::draw(CVideo*)' was hidden [-Woverloaded-virtual=]
+   46 |     void draw(CVideo *pVideo);
+      |          ^~~~
+In file included from /project/src/gui/Gui.h:19:
+/opt/devkitpro/wut/usr/include/gui/GridBackground.h:24:10: note:   by 'void GridBackground::draw(CVideo*, const glm::mat4&)'
+   24 |     void draw(CVideo *pVideo, const glm::mat4 &modelView);
+      |          ^~~~
+/project/src/Application.cpp: In function 'void initExternalStorage()':
+/project/src/Application.cpp:30:32: error: 'numberUSBStorageDevicesConnected' was not declared in this scope
+   30 |     if ((numConnectedStorage = numberUSBStorageDevicesConnected()) <= 0) {
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/project/src/Application.cpp:54:21: error: 'ACPMountExternalStorage' was not declared in this scope; did you mean 'initExternalStorage'?
+   54 |                     ACPMountExternalStorage();
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~
+      |                     initExternalStorage
+/project/src/Application.cpp:74:9: error: 'InitEmptyExternalStorage' was not declared in this scope; did you mean 'initExternalStorage'?
+   74 |         InitEmptyExternalStorage();
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         initExternalStorage
+/project/src/Application.cpp:79:48: error: qualified-id in declaration before '=' token
+   79 | Application * Application::applicationInstance = nullptr;
+      |                                                ^
+/project/src/Application.cpp:80:35: error: qualified-id in declaration before '=' token
+   80 | bool Application::exitApplication = false;
+      |                                   ^
+/project/src/Application.cpp:81:31: error: qualified-id in declaration before '=' token
+   81 | bool Application::quitRequest = false;
+      |                               ^
+/project/src/Application.cpp:83:25: error: cannot call constructor 'Application::Application' directly [-fpermissive]
+   83 | Application::Application(): CThread(CThread::eAttributeAffCore1 | CThread::eAttributePinnedAff, 0, 0x800000), bgMusic(nullptr), video(nullptr), mainWindow(nullptr), fontSystem(nullptr), exitCode(0) {
+      | ~~~~~~~~~~~~~~~~~~~~~~~~^~
+/project/src/Application.cpp:83:25: note: for a function-style cast, remove the redundant '::Application'
+/project/src/Application.cpp:83:25: error: 'Application::Application()' is private within this context
+/project/src/Application.h:58:5: note: declared private here
+   58 |     Application();
+      |     ^~~~~~~~~~~
+/project/src/Application.cpp:83:25: error: 'virtual Application::~Application()' is private within this context
+   83 | Application::Application(): CThread(CThread::eAttributeAffCore1 | CThread::eAttributePinnedAff, 0, 0x800000), bgMusic(nullptr), video(nullptr), mainWindow(nullptr), fontSystem(nullptr), exitCode(0) {
+      | ~~~~~~~~~~~~~~~~~~~~~~~~^~
+/project/src/Application.h:60:13: note: declared private here
+   60 |     virtual ~Application();
+      |             ^
+/project/src/Application.cpp:83:27: error: expected ';' before ':' token
+   83 | Application::Application(): CThread(CThread::eAttributeAffCore1 | CThread::eAttributePinnedAff, 0, 0x800000), bgMusic(nullptr), video(nullptr), mainWindow(nullptr), fontSystem(nullptr), exitCode(0) {
+      |                           ^
+      |                           ;
+/project/src/Application.cpp:105:26: error: no matching function for call to 'Application::~Application()'
+  105 | Application::~Application() {
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/project/src/Application.h:60:13: note: candidate: 'virtual Application::~Application()'
+   60 |     virtual ~Application();
+      |             ^
+/project/src/Application.h:60:13: note:   candidate expects 1 argument, 0 provided
+/project/src/Application.cpp:127:26: error: qualified-id in declaration before '(' token
+  127 | int32_t Application::exec() {
+      |                          ^
+/project/src/Application.cpp:136:23: error: qualified-id in declaration before '(' token
+  136 | void Application::quit(int32_t code) {
+      |                       ^
+/project/src/Application.cpp:142:26: error: qualified-id in declaration before '(' token
+  142 | void Application::fadeOut() {
+      |                          ^
+/project/src/Application.cpp:184:25: error: qualified-id in declaration before '(' token
+  184 | bool Application::procUI() {
+      |                         ^
+/project/src/Application.cpp:250:32: error: qualified-id in declaration before '(' token
+  250 | void Application::executeThread() {
+      |                                ^
+/project/src/Application.cpp:313:2: error: expected '}' at end of input
+  313 | }
+      |  ^
+/project/src/Application.cpp:22:28: note: to match this '{'
+   22 | void initExternalStorage() {
+      |                            ^
+make[1]: *** [/opt/devkitpro/devkitPPC/base_rules:15: entry.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make[1]: *** [/opt/devkitpro/devkitPPC/base_rules:15: Application.o] Error 1
+make: *** [Makefile:110: build] Error 2
