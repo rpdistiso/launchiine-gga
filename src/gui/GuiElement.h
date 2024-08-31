@@ -509,7 +509,7 @@ public:
     virtual void update(GuiController *t) {}
 
     //!Called constantly to redraw the element
-    virtual void draw(CVideo *v) {}
+    virtual void draw(CVideo *v) = 0;
 
     //!Called constantly to process stuff in the element
     virtual void process() {}

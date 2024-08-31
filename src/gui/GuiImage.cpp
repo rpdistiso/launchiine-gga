@@ -1,4 +1,5 @@
 #include "GuiImage.h"
+#include <glm/mat4x4.hpp>
 
 void GuiImage::draw(CVideo *pVideo) {
     glm::mat4 identityMatrix(1.0f);
