@@ -6,6 +6,10 @@ void GuiImage::draw(CVideo *pVideo) {
     draw(pVideo, identityMatrix);
 }
 
+void GuiImage::setSize(float width, float height) {
+    this->width = width;
+    this->height = height;
+}
 void GuiImage::draw(CVideo *pVideo, const glm::mat4 &modelView) {
     if (this->isVisible()) {
         // Apply modelView transformation
