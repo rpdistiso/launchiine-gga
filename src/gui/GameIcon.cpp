@@ -155,10 +155,6 @@ bool GameIcon::checkRayIntersection(const glm::vec3 & rayOrigin,
   return true;
 }
 
-void GameIcon::draw(CVideo* v) {
-    GuiImage::draw(v);
-}
-
 void GameIcon::draw(CVideo* v, const glm::mat4 &modelView 
 const glm::mat4 &projectionMtx,
     const glm::mat4 &viewMtx,
@@ -168,12 +164,15 @@ const glm::mat4 &projectionMtx,
   }
   this->draw(v, v->getProjectionMtx(), v->getViewMtx(), modelView);
    }
-void GameIcon::draw(CVideo * pVideo,
+void GameIcon::draw(CVideo *pVideo,
   const glm::mat4 &projectionMtx,
     const glm::mat4 &viewMtx,
-      const glm::mat4 &modelView) {
+      const glm::mat4 &modelView) 
+      {
   if (imageData == nullptr) {
     return;
+  if(!this->isVisible() || (this->getAlpha() == 0.0f))
+        return;
   }
   //! first setup 2D GUI positions
   float currPosX = getCenterX() * pVideo -> getWidthScaleFactor() * 2.0f;
