@@ -8,18 +8,19 @@
 #include <queue>
 #include <thread>
 #include <vector>
+#include <memory>
 
 class AsyncExecutor {
 public:
     static void pushForDelete(GuiElement *element) {
-        if (!instance) {
+        if (instance) {
             instance = new AsyncExecutor();
         }
         instance->pushForDeleteInternal(element);
     }
 
 static void pushForDelete(GuiImageData *imageData) {
-if (!instance) {
+if (instance) {
     instance = new AsyncExecutor();
 }
 instance->pushForDeleteInternal(imageData);
@@ -47,7 +48,7 @@ private:
     ~AsyncExecutor();
 
     void pushForDeleteInternal(GuiElement *element);
-
+    void pushForDeleteInternalImageData(GuiImageData *imageData);
     void executeInternal(std::function<void()> func);
 
     std::recursive_mutex mutex;
@@ -58,4 +59,5 @@ private:
 
     std::recursive_mutex deleteListMutex;
     std::queue<GuiElement *> deleteList;
+    std::queue<GuiImageData *> imageDataDeleteList;
 };

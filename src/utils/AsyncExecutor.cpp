@@ -3,6 +3,24 @@
 
 AsyncExecutor * AsyncExecutor::instance = nullptr;
 
+void AsyncExecutor::pushForDeleteInternalImageData(GuiImageData *imageData) {
+    std::lock_guard<std::recursive_mutex> lock(deleteListMutex);
+    imageDataDeleteList.push(imageData);
+}
+
+void AsyncExecutor::processDeleteQueue() {
+    std::lock_guard<std::recursive_mutex> lock(deleteListMutex);
+    while (!deleteList.empty()) {
+        GuiElement *element = deleteList.front();
+        deleteList.pop();
+        delete element;
+    }
+    while (!imageDataDeleteList.empty()) {
+        GuiImageData *imageData = imageDataDeleteList.front();
+        imageDataDeleteList.pop();
+        delete imageData;
+    }
+}
 void AsyncExecutor::pushForDeleteInternal(GuiElement * ptr) {
   deleteListMutex.lock();
   deleteList.push(ptr);
