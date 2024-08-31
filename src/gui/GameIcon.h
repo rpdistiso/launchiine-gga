@@ -51,7 +51,7 @@ public:
 
 void draw(CVideo *pVideo) override;
     void draw(CVideo *pVideo, const glm::mat4 &modelView) override;
-    void draw(CVideo *pVideo, const glm::mat4 &projection, const glm::mat4 &view, const glm::mat4 &modelView);   
+    void draw(CVideo *pVideo, const glm::mat4 &projectionMtx, const glm::mat4 &viewMtx, const glm::mat4 &modelView);   
     bool checkRayIntersection(const glm::vec3 &rayOrigin, const glm::vec3 &rayDirFrac);
 
 private:

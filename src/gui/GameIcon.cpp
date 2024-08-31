@@ -160,9 +160,9 @@ void GameIcon::draw(CVideo* v) {
 }
 
 void GameIcon::draw(CVideo* v, const glm::mat4 &modelView 
-const glm::mat4 & projectionMtx,
-    const glm::mat4 & viewMtx,
-      const glm::mat4 & modelView) {
+const glm::mat4 &projectionMtx,
+    const glm::mat4 &viewMtx,
+      const glm::mat4 &modelView) {
   if (imageData == nullptr) {
     return;
   }
