@@ -1,9 +1,9 @@
-#ifndef _GAME_ICON_H_
-#define _GAME_ICON_H_
+#ifndef GAME_ICON_H_
+#define GAME_ICON_H_
 
 #include <gui/GuiImageAsync.h>
 #include <gui/video/shaders/Shader3D.h>
-
+#include <glm/mat4x4.hpp>
 class GameIcon : public GuiImage {
 public:
     GameIcon(GuiImageData *preloadImage);
@@ -49,13 +49,9 @@ public:
         bIconLast = enable;
     }
 
-    void draw(CVideo *pVideo) {
-        static const glm::mat4 identity(1.0f);
-        draw(pVideo, identity, identity, identity);
-    }
-
-    void draw(CVideo *pVideo, const glm::mat4 &projection, const glm::mat4 &view, const glm::mat4 &modelView);
-
+void draw(CVideo *pVideo) override;
+    void draw(CVideo *pVideo, const glm::mat4 &modelView) override;
+    void draw(CVideo *pVideo, const glm::mat4 &projection, const glm::mat4 &view, const glm::mat4 &modelView);   
     bool checkRayIntersection(const glm::vec3 &rayOrigin, const glm::vec3 &rayDirFrac);
 
 private:
@@ -92,4 +88,4 @@ private:
     float selectionBlurInnerBorderSize;
 };
 
-#endif // _GAME_ICON_H_
+#endif // GAME_ICON_H_

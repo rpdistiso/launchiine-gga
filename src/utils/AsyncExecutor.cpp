@@ -3,7 +3,7 @@
 
 AsyncExecutor * AsyncExecutor::instance = nullptr;
 
-void AsyncExecutor::pushForDeleteInternalImageData(GuiImageData *imageData) {
+void AsyncExecutor::pushForDeleteImageData(GuiImageData *imageData) {
     std::lock_guard<std::recursive_mutex> lock(deleteListMutex);
     imageDataDeleteList.push(imageData);
 }

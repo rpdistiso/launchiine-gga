@@ -13,19 +13,19 @@
 class AsyncExecutor {
 public:
     static void pushForDelete(GuiElement *element) {
-        if (instance) {
+        if (!instance) {
             instance = new AsyncExecutor();
         }
         instance->pushForDeleteInternal(element);
     }
 
-static void pushForDelete(GuiImageData *imageData) {
-if (instance) {
-    instance = new AsyncExecutor();
-}
-instance->pushForDeleteInternal(imageData);
-delete imageData;
-}
+    static void pushForDelete(GuiImageData *imageData) {
+        if (!instance) {
+            instance = new AsyncExecutor();
+        }
+        instance->pushForDeleteImageData(imageData);
+    }
+
     static void execute(std::function<void()> func) {
         if (!instance) {
             instance = new AsyncExecutor();
@@ -44,12 +44,12 @@ private:
     static AsyncExecutor *instance;
 
     AsyncExecutor();
-
     ~AsyncExecutor();
 
     void pushForDeleteInternal(GuiElement *element);
-    void pushForDeleteInternalImageData(GuiImageData *imageData);
+    void pushForDeleteImageData(GuiImageData *imageData);
     void executeInternal(std::function<void()> func);
+    void processDeleteQueue();
 
     std::recursive_mutex mutex;
     std::thread *thread;
