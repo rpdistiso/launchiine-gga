@@ -3,8 +3,8 @@
 #include "utils/logger.h"
 #include <coreinit/cache.h>
 #include <future>
-#include <gui/GuiElement.h>
-#include <gui/GuiImageData.h>
+#include "gui/GuiElement.h"
+#include "gui/GuiImageData.h"
 #include <queue>
 #include <thread>
 #include <vector>

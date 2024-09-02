@@ -3,7 +3,7 @@
 
 #include "menu/MainWindow.h"
 #include "system/CThread.h"
-#include <gui/video/CVideo.h>
+#include "gui/video/CVideo.h"
 
 // forward declaration
 class FreeTypeGX;

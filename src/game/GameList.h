@@ -3,8 +3,8 @@
 
 #include <coreinit/cache.h>
 #include <coreinit/mcp.h>
-#include <gui/GuiImageData.h>
-#include <gui/sigslot.h>
+#include "gui/GuiImageData.h"
+#include "gui/sigslot.h"
 #include <mutex>
 #include <stdint.h>
 #include <vector>

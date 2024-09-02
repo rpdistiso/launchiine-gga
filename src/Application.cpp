@@ -8,11 +8,11 @@
 #include <coreinit/foreground.h>
 #include <coreinit/title.h>
 #include <coreinit/thread.h>
-#include <gui/FreeTypeGX.h>
-#include <gui/VPadController.h>
-#include <gui/WPadController.h>
-#include <gui/memory.h>
-#include <gui/sounds/SoundHandler.hpp>
+#include "gui/FreeTypeGX.h"
+#include "gui/VPadController.h"
+#include "gui/WPadController.h"
+#include "gui/memory.h"
+#include "gui/sounds/SoundHandler.hpp"
 #include <glm/mat4x4.hpp>
 #include <proc_ui/procui.h>
 #include <sysapp/switch.h>

@@ -2,8 +2,8 @@
 #include "filelist.h"
 #include "fs/FSUtils.h"
 #include "utils/AsyncExecutor.h"
-#include <gui/GuiImageData.h>
-#include <gui/GuiSound.h>
+#include "gui/GuiImageData.h"
+#include "gui/GuiSound.h"
 #include <malloc.h>
 #include <string.h>
 #include <string>

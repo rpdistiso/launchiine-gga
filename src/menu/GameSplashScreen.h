@@ -1,8 +1,8 @@
 #pragma once
 
 #include "game/GameList.h"
-#include <gui/GuiFrame.h>
-#include <gui/GuiImage.h>
+#include "gui/GuiFrame.h"
+#include "gui/GuiImage.h"
 
 class GameSplashScreen : public GuiFrame, public sigslot::has_slots<> {
 public:

@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "utils/StringTools.h"
 #include "utils/logger.h"
-#include <utils/SplashSoundPlayer.h>
+#include "utils/SplashSoundPlayer.h"
 #include "GameSplashScreen.h"
 #include "gui/GuiIconGrid.h"
 #include "gui/GuiTitleBrowser.h"
