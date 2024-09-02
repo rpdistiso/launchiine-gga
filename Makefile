@@ -27,12 +27,12 @@ SOURCES		:=	src \
 				src/resources \
 				src/system \
 				src/utils \
-				/workspaces/libgui/source
+				/project/workspace/src/libgui/source
 DATA		:=	data \
 				data/images \
 				data/sounds \
 				data/fonts
-INCLUDES	:=	src /workspaces/libgui/source  
+INCLUDES	:=	src /project/workspace/src/libgui/source  
 
 #-------------------------------------------------------------------------------
 # options for code generation
@@ -45,7 +45,7 @@ CFLAGS	+=	$(INCLUDE) -D__WIIU__ -D__WUT__
 CXXFLAGS	:= $(CFLAGS) -std=c++20
 
 ASFLAGS	:=	-g $(ARCH)
-LDFLAGS	=	-g $(ARCH) $(RPXSPECS) -Wl,-Map,$(notdir $*.map) -L/workspaces/libgui/lib -lgui
+LDFLAGS	=	-g $(ARCH) $(RPXSPECS) -Wl,-Map,$(notdir $*.map) 
 
 LIBS	:=  -lgui -lfreetype -lgd -lpng -ljpeg -lz -lmad -lvorbisidec -logg -lbz2 -lwut 
 
@@ -96,9 +96,9 @@ export HFILES_BIN	:=	$(addsuffix .h,$(subst .,_,$(BINFILES)))
 
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-			-I$(CURDIR)/$(BUILD) -I$(PORTLIBS_PATH)/ppc/include/freetype2 -I/workspaces/libgui/source
+			-I$(CURDIR)/$(BUILD) -I$(PORTLIBS_PATH)/ppc/include/freetype2 -I/project/workspace/libgui/source
 
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) -L/workspaces/libgui/lib -lgui
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) -L/project/workspace/src/libgui/lib -lgui
 
 .PHONY: $(BUILD) clean all
 
