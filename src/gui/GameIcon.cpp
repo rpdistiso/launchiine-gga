@@ -4,6 +4,8 @@
 #include "utils/logger.h"
 #include "utils/utils.h"
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/mat4x4.hpp>
+#include <gui/GuiImage.h>
 #include <gui/video/CVideo.h>
 #include <gui/video/shaders/Shader3D.h>
 #include <gui/video/shaders/ShaderFractalColor.h>
@@ -165,7 +167,7 @@ bool GameIcon::checkRayIntersection(const glm::vec3 & rayOrigin,
 
 void GameIcon::draw(CVideo *pVideo) {
   glm::mat4 identityMatrix = glm::mat4(1.0f);
-  this->draw(pVideo, identityMatrix);
+  GuiImage::draw(pVideo, identityMatrix);
 }
 
 void GameIcon::draw(CVideo *pVideo,

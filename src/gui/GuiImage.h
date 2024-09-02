@@ -45,7 +45,6 @@ public:
     }
 
     //!Constantly called to draw the image
-    virtual void draw(CVideo *pVideo) override;
     virtual void draw(CVideo *v) override;
     virtual void draw(CVideo *pVideo, const glm::mat4 &modelView);
 
