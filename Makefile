@@ -160,16 +160,6 @@ $(OFILES_SRC)	: $(HFILES_BIN)
 
 -include $(DEPENDS)
 
-.PHONY: rpx_only
-rpx_only: $(OUTPUT).rpx
-	@echo "RPX file created."
-	@rm -f $(OUTPUT).elf
-# Modify the existing rule for .rpx to remove .elf after creation
-$(OUTPUT).rpx	:	$(OUTPUT).elf
-	@echo "Creating RPX file"
-	@$(STRIP) -g $<
-	@elf2rpl $< $@
-	@rm -f $(OUTPUT).elf
 #-------------------------------------------------------------------------------
 endif
 #-------------------------------------------------------------------------------

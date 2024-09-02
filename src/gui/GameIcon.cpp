@@ -167,7 +167,7 @@ bool GameIcon::checkRayIntersection(const glm::vec3 & rayOrigin,
 
 void GameIcon::draw(CVideo *pVideo) {
   glm::mat4 identityMatrix = glm::mat4(1.0f);
-  GuiImage::draw(pVideo, identityMatrix);
+  this->draw(pVideo, pVideo->getProjectionMtx(), pVideo->getViewMtx(), identityMatrix);
 }
 
 void GameIcon::draw(CVideo *pVideo,
