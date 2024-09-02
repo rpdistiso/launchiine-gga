@@ -35,7 +35,7 @@ Install the following dependencies:
 Then build via `make`.
 
 ## Building using the Dockerfile
-Note: As of 31.8.2024, building is not possible due to me forgetting to implement certain functions
+Note: As of 02.9.2024, building is not possible unless you would like to fix my link-time errors
 
 It's possible to use a docker image for building. This way you don't need anything installed on your host system.
 
