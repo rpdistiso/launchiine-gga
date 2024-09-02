@@ -1,0 +1,10 @@
+build/*
+release/*
+libgui.cbp
+lib/
+*.bz2
+libgui.layout
+obj/
+CMakeLists.txt
+cmake-build-debug/
+.idea/
