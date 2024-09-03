@@ -1,7 +1,7 @@
 #ifndef GUI_SOUND_H
 #define GUI_SOUND_H
 
-#include <gui/GuiElement.h>
+#include "gui/GuiElement.h"
 
 //!Sound conversion and playback. A wrapper for other sound libraries - ASND, libmad, ltremor, etc
 class GuiSound : public GuiElement {
