@@ -3,10 +3,11 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/mat4x4.hpp>
-#include <gui/GuiElement.h>
+#include "gui/GuiElement.h"
+#include "gui/gx2_ext.h"
+#include "gui/video/shaders/Shader.h"
 #include "GuiImageData.h"
-#include <gui/gx2_ext.h>
-#include <gui/video/shaders/Shader.h>
+
 
 //!Display, manage, and manipulate images in the GUI
 class GuiImage : public GuiElement {
