@@ -10,11 +10,11 @@
 #include <unistd.h>
 #include <wchar.h>
 #include "GuiImageData.h"
-#include <gui/gx2_ext.h>
+#include "gui/gx2_ext.h"
+#include "gui/sigslot.h"
 #include <glm/glm.hpp>
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <gui/sigslot.h>
 
 enum {
     EFFECT_NONE             = 0x00,
