@@ -5,10 +5,10 @@
 #include "utils/utils.h"
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/mat4x4.hpp>
-#include <gui/GuiImage.h>
-#include <gui/video/CVideo.h>
-#include <gui/video/shaders/Shader3D.h>
-#include <gui/video/shaders/ShaderFractalColor.h>
+#include "gui/GuiImage.h"
+#include "gui/video/CVideo.h"
+#include "gui/video/shaders/Shader3D.h"
+#include "gui/video/shaders/ShaderFractalColor.h"
 
 static
 const float cfIconMirrorScale = 1.15f;
