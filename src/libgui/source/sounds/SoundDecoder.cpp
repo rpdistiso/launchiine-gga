@@ -4,7 +4,7 @@
 #include <coreinit/time.h>
 #include <coreinit/thread.h>
 #include <coreinit/cache.h>
-#include <gui/sounds/SoundDecoder.hpp>
+#include "gui/sounds/SoundDecoder.hpp"
 #include "fs/CFile.hpp"
 
 static const uint32_t FixedPointShift = 15;
