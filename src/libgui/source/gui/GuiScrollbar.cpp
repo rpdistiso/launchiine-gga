@@ -14,15 +14,13 @@
  * must not claim that you wrote the original software. If you use
  * this software in a product, an acknowledgment in the product
  * documentation would be appreciated but is not required.
- *
  * 2. Altered source versions must be plainly marked as such, and
  * must not be misrepresented as being the original software.
- *
  * 3. This notice may not be removed or altered from any source
  * distribution.
  ***************************************************************************/
 #include "utils/utils.h"
-#include <gui/GuiScrollbar.h>
+#include "gui/GuiScrollbar.h"
 
 GuiScrollbar::GuiScrollbar(int32_t h)
     : touchTrigger(GuiTrigger::CHANNEL_1, GuiTrigger::VPAD_TOUCH), wpadTouchTrigger(GuiTrigger::CHANNEL_2 | GuiTrigger::CHANNEL_3 | GuiTrigger::CHANNEL_4 | GuiTrigger::CHANNEL_5, GuiTrigger::BUTTON_A) {
