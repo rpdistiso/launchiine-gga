@@ -1,8 +1,8 @@
 #ifndef GAME_BG_IMAGE_H
 #define GAME_BG_IMAGE_H
 
-#include <gui/GuiImageAsync.h>
-#include <gui/video/shaders/Shader3D.h>
+#include "gui/GuiImageAsync.h"
+#include "gui/video/shaders/Shader3D.h"
 
 class GameBgImage : public GuiImageAsync {
 public:
