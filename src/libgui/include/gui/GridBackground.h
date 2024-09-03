@@ -1,7 +1,7 @@
 #ifndef _GRID_BACKGROUND_H_
 #define _GRID_BACKGROUND_H_
 
-#include <gui/GuiImage.h>
+#include "gui/GuiImage.h"
 
 class GridBackground : public GuiImage {
 public:
