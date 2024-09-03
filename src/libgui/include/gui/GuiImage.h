@@ -1,26 +1,13 @@
-/****************************************************************************
- * Copyright (C) 2015 Dimok
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
 #ifndef GUI_IMAGE_H_
 #define GUI_IMAGE_H_
 
-#include <gui/GuiElement.h>
-#include <gui/GuiImageData.h>
-#include <gui/gx2_ext.h>
-#include <gui/video/shaders/Shader.h>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/mat4x4.hpp>
+#include "gui/GuiElement.h"
+#include "gui/gx2_ext.h"
+#include "gui/video/shaders/Shader.h"
+#include "GuiImageData.h"
+
 
 //!Display, manage, and manipulate images in the GUI
 class GuiImage : public GuiElement {
@@ -59,7 +46,8 @@ public:
     }
 
     //!Constantly called to draw the image
-    void draw(CVideo *pVideo);
+    virtual void draw(CVideo *v);
+    virtual void draw(CVideo *pVideo, const glm::mat4 &modelView);
 
     //!Gets the image data
     //!\return pointer to image data
@@ -86,7 +74,8 @@ public:
     void setImageColor(const GX2Color &c, int32_t idx = -1);
 
     //!Change ImageColor
-    void setSize(int32_t w, int32_t h);
+    virtual void setSize(float width, float height) override;
+    virtual void setSize(int32_t width, int32_t height);
 
     void setPrimitiveVertex(int32_t prim, const float *pos, const float *tex, uint32_t count);
 

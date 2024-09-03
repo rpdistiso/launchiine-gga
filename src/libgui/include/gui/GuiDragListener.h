@@ -1,5 +1,5 @@
-#ifndef GUI_DRAG_LISTENER_H_
-#define GUI_DRAG_LISTENER_H_
+#ifndef GUI_DRAG_LISTENER_H
+#define GUI_DRAG_LISTENER_H
 
 #include "gui/GuiButton.h"
 #include "gui/GuiController.h"
@@ -28,7 +28,8 @@ public:
     void update(GuiController *c);
 
     sigslot::signal5<GuiDragListener *, const GuiController *, GuiTrigger *, int32_t, int32_t> dragged;
-
+    //draw method override
+    void draw(CVideo *v) override {}
 protected:
     static const int32_t iMaxGuiTriggers = 10;
 

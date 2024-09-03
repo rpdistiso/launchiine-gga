@@ -1,23 +1,7 @@
-/****************************************************************************
- * Copyright (C) 2015 Dimok
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- ****************************************************************************/
-#ifndef GUI_SOUND_H_
-#define GUI_SOUND_H_
+#ifndef GUI_SOUND_H
+#define GUI_SOUND_H
 
-#include <gui/GuiElement.h>
+#include "gui/GuiElement.h"
 
 //!Sound conversion and playback. A wrapper for other sound libraries - ASND, libmad, ltremor, etc
 class GuiSound : public GuiElement {
@@ -64,6 +48,8 @@ public:
     //!\param l Loop (true to loop)
     void SetLoop(bool l);
 
+    //draw override
+    void draw(CVideo *v) override {}
 protected:
     int32_t voice; //!< Currently assigned ASND voice channel
 };

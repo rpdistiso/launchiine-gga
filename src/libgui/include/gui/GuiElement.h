@@ -1,9 +1,7 @@
-#ifndef GUI_ELEMENT_H_
-#define GUI_ELEMENT_H_
-
+#ifndef GUI_ELEMENT_H
+#define GUI_ELEMENT_H
 #include <string>
 #include <vector>
-
 #include <malloc.h>
 #include <math.h>
 #include <stdio.h>
@@ -11,13 +9,12 @@
 #include <string.h>
 #include <unistd.h>
 #include <wchar.h>
-
+#include "GuiImageData.h"
 #include "gui/gx2_ext.h"
-
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
 #include "gui/sigslot.h"
-
+#include <glm/glm.hpp>
+#include <glm/mat4x4.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 enum {
     EFFECT_NONE             = 0x00,
@@ -54,6 +51,7 @@ class CVideo;
 //!Primary GUI class. Most other classes inherit from this class.
 class GuiElement {
 public:
+
     //!Constructor
     GuiElement();
 
@@ -125,7 +123,7 @@ public:
             pCenterX += pWidth * 0.5f * pScale - width * 0.5f * getScaleX();
         }
         return pCenterX;
-    }
+    };
 
     virtual float getCenterY(void) {
         float pCenterY = 0.0f;
@@ -511,7 +509,7 @@ public:
     virtual void update(GuiController *t) {}
 
     //!Called constantly to redraw the element
-    virtual void draw(CVideo *v) {}
+    virtual void draw(CVideo *v) = 0;
 
     //!Called constantly to process stuff in the element
     virtual void process() {}
