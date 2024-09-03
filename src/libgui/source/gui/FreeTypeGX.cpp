@@ -1,28 +1,6 @@
-/*
- * FreeTypeGX is a wrapper class for libFreeType which renders a compiled
- * FreeType parsable font so a GX texture for Wii homebrew development.
- * Copyright (C) 2008 Armin Tamzarian
- * Modified by Dimok, 2015 for WiiU GX2
- *
- * This file is part of FreeTypeGX.
- *
- * FreeTypeGX is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published
- * by the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * FreeTypeGX is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with FreeTypeGX.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-#include <gui/FreeTypeGX.h>
-#include <gui/video/CVideo.h>
-#include <gui/video/shaders/Texture2DShader.h>
+#include "gui/FreeTypeGX.h"
+#include "gui/video/CVideo.h"
+#include "gui/video/shaders/Texture2DShader.h"
 
 using namespace std;
 
