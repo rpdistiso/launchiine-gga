@@ -4,9 +4,9 @@
 #include "utils/logger.h"
 #include <algorithm>
 #include <coreinit/cache.h>
-#include <gui/GuiController.h>
-#include <gui/GuiIconGrid.h>
-#include <gui/video/CVideo.h>
+#include "gui/GuiController.h"
+#include "gui/GuiIconGrid.h"
+#include "gui/video/CVideo.h"
 #include <map>
 
 GuiIconGrid::GuiIconGrid(int32_t w, int32_t h, uint64_t GameIndex, bool sortByName): GuiTitleBrowser(w, h, GameIndex),
