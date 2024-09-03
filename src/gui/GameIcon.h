@@ -1,9 +1,10 @@
 #ifndef GAME_ICON_H
 #define GAME_ICON_H
 
-#include <gui/GuiImageAsync.h>
-#include <gui/video/shaders/Shader3D.h>
+#include "gui/GuiImageAsync.h"
+#include "gui/video/shaders/Shader3D.h"
 #include <glm/mat4x4.hpp>
+#include <glm/matrix_transform.hpp>
 class GameIcon : public GuiImage {
 public:
     GameIcon(GuiImageData *preloadImage);
