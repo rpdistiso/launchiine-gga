@@ -3,8 +3,8 @@
 
 #include <malloc.h>
 #include <gd.h>
-#include <gui/GuiElement.h>
-#include <gui/gx2_ext.h>
+#include "gui/GuiElement.h"
+#include "gui/gx2_ext.h"
 #include <gx2/texture.h>
 
 class GuiImageData {
