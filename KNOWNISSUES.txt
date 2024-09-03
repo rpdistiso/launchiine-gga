@@ -4,4 +4,3 @@ These issues are my main concerns:
   - No way to access original Wii U menu
   - No menu navigation via analog sticks or DPad
   - No bootSound (yet)
-  - Improper external storage support (nn::spm)
