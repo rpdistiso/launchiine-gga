@@ -32,7 +32,7 @@ DATA		:=	data \
 				data/images \
 				data/sounds \
 				data/fonts
-INCLUDES	:=	src /project/workspace/src/libgui  
+INCLUDES	:=	src /project/workspace/src/libgui/include  
 
 #-------------------------------------------------------------------------------
 # options for code generation
@@ -96,9 +96,9 @@ export HFILES_BIN	:=	$(addsuffix .h,$(subst .,_,$(BINFILES)))
 
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-			-I$(CURDIR)/$(BUILD) -I$(PORTLIBS_PATH)/ppc/include/freetype2 -I/project/workspace/src/libgui
+			-I$(CURDIR)/$(BUILD) -I$(PORTLIBS_PATH)/ppc/include/freetype2
 
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) -L/project/workspace/src/libgui -lgui
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) -L/project/workspace/src/libgui/lib -lgui
 
 .PHONY: $(BUILD) clean all
 
