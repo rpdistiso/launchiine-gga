@@ -1,8 +1,8 @@
-## Launchiine (WIP)
+## Launchiine-GGA (WIP)
 
-A simple Wii U Menu replacement, still in early development and not ready for a day to day usage
+This is a variant of Launchiine that I am making for my local arcade. This version will limit the ability to access applets and user settings to be brick proof for the casual users at said arcade.
 
-## Usage (Replace Wii U Menu via Mocha Payload):
+## Usage:
 ([ENVIRONMENT] is a placeholder for the actual environment name)
 - Place the `men.rpx` on the SD card in the directory `sd:/wiiu/environments/[ENVIRONMENT]/`
 - Load the [MochaPayload](https://github.com/wiiu-env/MochaPayload) via the [EnvironmentLoader](https://github.com/wiiu-env/EnvironmentLoader) (e.g. [Tiramisu](https://github.com/wiiu-env/Tiramisu) or [Aroma](https://github.com/wiiu-env/Aroma))
@@ -54,3 +54,5 @@ docker run -it --rm -v ${PWD}:/project launchiine-builder make clean
 Maschell: Libgui, AutoBootModule, original project
 
 Dimok: FreeType and related assets
+
+Steven Bradberry: Greenwood Gamer Arcade assets
