@@ -52,4 +52,5 @@ docker run -it --rm -v ${PWD}:/project launchiine-builder make clean
 
 ## Credits
 Maschell: Libgui, AutoBootModule, original project
+
 Dimok: FreeType and related assets
