@@ -31,7 +31,7 @@ Install the following dependencies:
 - [wut](https://github.com/devkitPro/wut)
 - [libgui](https://github.com/wiiu-env/libgui)
 
-Then build via `make`.
+Then build via `make`
 
 Note: You must build libgui from `src/libgui` in this repository, this is required for building with Docker and DevKitPro
 
