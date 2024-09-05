@@ -11,7 +11,7 @@ This is a variant of Launchiine that I am making for my local arcade. This versi
 ## Known Issues
 - Random crashes
 - The Keyboard input is implemented, but result is ignored
-- nn::spm is initalized but no quick start menu support. It's relying on the [AutobootModule](https://github.com/wiiu-env/AutobootModule)
+- It's relying on the [AutobootModule](https://github.com/wiiu-env/AutobootModule)
 - Probably a lot more
 
 ## TODOs
@@ -20,8 +20,7 @@ This is a variant of Launchiine that I am making for my local arcade. This versi
 - Folder support
 - Preserve app order after closing/opening launchiine.
 - Implement Account selection when no default account is set. 
-- Implement update check/no way to update games
-- Properly implement nn:sl (external storage and quick start menu)
+- Implement update check/way to update games
 - Fix search
 - Implement all the other stuff the Wii U Menu offers (Account creation, switching between Accounts, set default account etc.)
 - Implement ways to launch the original Wii U Menu.
