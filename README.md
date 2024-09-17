@@ -2,6 +2,8 @@
 
 This is a variant of Launchiine that I am making for my local arcade. This version will limit the ability to access applets and user settings to be brick proof for the casual users at said arcade.
 
+For Launchiine without limitations (non-GGA) go [here](https://github.com/rpdistiso/launchiine)
+
 ## Usage:
 ([ENVIRONMENT] is a placeholder for the actual environment name)
 - Place the `men.rpx` on the SD card in the directory `sd:/wiiu/environments/[ENVIRONMENT]/`
@@ -19,7 +21,6 @@ This is a variant of Launchiine that I am making for my local arcade. This versi
 - Sound on splashscreen(Fixed sort of)
 - Folder support
 - Preserve app order after closing/opening launchiine.
-- Implement Account selection when no default account is set. 
 - Implement update check/way to update games
 - Fix search
 - Implement all the other stuff the Wii U Menu offers (Account creation, switching between Accounts, set default account etc.)
