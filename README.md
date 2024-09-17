@@ -32,7 +32,7 @@ Install the following dependencies:
 
 Then build via `make`
 
-# Note: You must build libgui from `src/libgui` in this repository, this is required for building with Docker and DevKitPro
+### Note: You must build libgui from `src/libgui` in this repository, this is required for building with Docker and DevKitPro
 
 ## Building using the Dockerfile
 It's possible to use a docker image for building. This way you don't need anything installed on your host system.
