@@ -1,5 +1,5 @@
-FROM ghcr.io/wiiu-env/devkitppc:20240704
+FROM devkitpro/devkitppc:20241116
 
-COPY --from=wiiuenv/libgui:20220109 /artifacts /opt/devkitpro
+COPY --from=wiiuenv/libgui:20220205 /artifacts /opt/devkitpro
 
 WORKDIR project
