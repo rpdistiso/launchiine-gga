@@ -1,5 +1,5 @@
-#ifndef CTHREAD_H_
-#define CTHREAD_H_
+#ifndef CTHREAD_H
+#define CTHREAD_H
 
 #include <coreinit/thread.h>
 #include <malloc.h>

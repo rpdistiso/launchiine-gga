@@ -5,6 +5,7 @@
 #include "gui/video/shaders/Shader3D.h"
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
 class GameIcon : public GuiImage {
 public:
     GameIcon(GuiImageData *preloadImage);

@@ -2,7 +2,6 @@
 #include "Application.h"
 #include "utils/StringTools.h"
 #include "utils/logger.h"
-#include "utils/SplashSoundPlayer.h"
 #include "GameSplashScreen.h"
 #include "gui/GuiIconGrid.h"
 #include "gui/GuiTitleBrowser.h"
@@ -15,11 +14,6 @@
 #include <sysapp/launch.h>
 #include <sysapp/switch.h>
 
-//void SplashSoundPlayer::playSplashSound() {
- // SplashSoundPlayer soundPlayer;
-  //soundPlayer.loadSound("data/sounds/bootSound.mp3"); // Load the splash sound file
-  //soundPlayer.play(); // Play the splash sound
-//}
 
 MainWindow::MainWindow(int32_t w, int32_t h): width(w), height(h), gameClickSound(Resources::GetSound("game_click.mp3")), mainSwitchButtonFrame(nullptr), currentTvFrame(nullptr), currentDrcFrame(nullptr) {
   for (int32_t i = 0; i < 4; i++) {

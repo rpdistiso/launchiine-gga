@@ -1,5 +1,5 @@
-#ifndef _MAIN_DRC_BUTTONS_FRAME_H_
-#define _MAIN_DRC_BUTTONS_FRAME_H_
+#ifndef _MAIN_DRC_BUTTONS_FRAME_H
+#define _MAIN_DRC_BUTTONS_FRAME_H
 
 #include "gui/Gui.h"
 #include "resources/Resources.h"
@@ -85,4 +85,4 @@ private:
     GuiTrigger plusTrigger;
 };
 
-#endif //_SETTINGS_WINDOW_H_
+#endif //_SETTINGS_WINDOW_H
