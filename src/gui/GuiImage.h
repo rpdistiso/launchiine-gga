@@ -1,5 +1,5 @@
-#ifndef GUI_IMAGE_H_
-#define GUI_IMAGE_H_
+#ifndef GUI_IMAGE_H
+#define GUI_IMAGE_H
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/mat4x4.hpp>
